@@ -1,0 +1,190 @@
+
+body{
+	padding: 0;
+	margin: 0%;
+	overflow-x: auto;
+	overflow-y: auto;
+}
+ul#menu{
+	margin-left: 4%;
+	widht:100%;
+}
+.rayitas{
+	display: none;
+}
+ul {
+	list-style-type:none;
+	margin:0;
+	position: fixed;
+}
+.nombre{
+	font-size: 12px;
+	border-left: gray 3px solid;
+	overflow:hidden;
+	}
+/*Crea la listahorizontal con espacio*/
+li {
+	display:inline-block;
+	float: left;
+	width: 16%;
+	border-right: gray 3px solid;
+	border-bottom: gray 3px solid;
+	overflow:hidden;
+
+
+}
+img{
+	width: 15%;
+}
+/* Estilos para los link */
+li a {
+	display:block;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #fff;
+	background: #6e6a6b;
+	text-decoration: none;
+        transition:all 0.5s ease;
+        overflow:hidden;
+
+}
+
+/* estados hover de los link */
+li:hover a {
+	background: #19c589;
+}
+li.nombre:hover a{
+	background-color: red;
+}
+
+/* estilos del dropdown */
+li:hover ul a {
+	background: #f3f3f3;
+	color: #2f3036;
+	height: 40px;
+	line-height: 40px;
+}
+
+/* estilos del estado hover del dropdown*/
+li:hover ul a:hover {
+	background: #19c589;
+	color: #fff;
+}
+
+/*Oculta el dropdown*/
+li ul {
+	display: none;
+}
+
+/* Pone el dropdown en vertical */
+li ul li {
+	display: block;
+	float: none;
+}
+
+/* Previene el texto wrapping */
+li ul li a {
+	width: auto;
+	min-width: 100px;
+	padding: 0 20px;
+}
+
+/* Aparace el dropdown en hover*/
+ul li a:hover + .hidden, .hidden:hover {
+	display: block;
+}
+
+/* Estilo de .muestra-menu */
+.menu {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-decoration: none;
+	color: #fff;
+	background: #19c589;
+	text-align: center;
+	padding: 10px 0;
+	display: none;
+  transition:all 0.5s ease;
+  width: 30px;
+  margin:0;
+  padding: 0;
+  text-align: center;
+  margin-left: 50%;
+  
+}
+
+
+/*Oculta el checkbox*/
+input[type=checkbox]{
+    display: none;
+}
+
+/* muestra el menu cuando el checkbox is checked*/
+input[type=checkbox]:checked ~ #menu{
+    display: block;
+}
+
+
+/* estilos responsive */
+
+@media screen and (max-width : 760px){
+	.rayitas{
+		display: flex;
+		background-color: #19c589;
+		height: 30px;
+	}
+	.nombre{
+		border-left:none;
+	}
+	i.icon.fa.fa-bars.fa-fw{
+		padding-top: 7px;
+	}
+	i.icon.fa.fa-bars.fa-fw:hover{
+		cursor: pointer;
+	}
+	label.menu:hover{
+		cursor: pointer;
+		background-color: black;
+	}
+	div.rayitas{
+		position: sticky;
+		top:0;
+
+	}
+	ul#menu{
+		margin: 0;
+	}
+	/*Hace que el dropdown links aparescan en linea */
+	ul {
+		display: none;
+		position: fixed;
+		padding: 0;
+		width: 100%;
+		border-right: none;
+		margin:0;
+
+	}
+
+	/*Crea espacio vertical */
+	li {
+		position: sticky;
+	}
+	.nombre{
+		font-size: 16px;
+	}
+    img{
+		width: 40px;
+    }
+	/* crea todo el menu links  ancho full */
+	ul li, li a {
+		width: 100%;
+	}
+	/*Display '.muestra-menu' link*/
+	.menu {
+		display:block;
+	}
+	.der{
+		display: none;
+	}
+}
